@@ -177,17 +177,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [
             InlineKeyboardButton(
                 "Support Group",
-                "https://t.me/blackbulls_support",
+                "https://t.me/RedeyeServiceGroup",
             ),
             InlineKeyboardButton(
                 "Announcements",
-                "https://t.me/blackbull_bots"
+                "https://t.me/RedeyeServiceGroup"
             ),
         ],
         [
             InlineKeyboardButton(
                 text="Source Code",
-                url="https://github.com/Black-Bulls-Bots/zerotwobot"
+                url="https://github.com/Redeyealone/zerotwobot"
             )
         ]
     ]
@@ -251,11 +251,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     [
                         InlineKeyboardButton(
                             text="Support",
-                            url="https://t.me/blackbulls_support",
+                            url="https://t.me/RedeyeServiceGroup",
                         ),
                         InlineKeyboardButton(
                             text=str("Announcement's"),
-                            url="https://t.me/blackbull_bots",
+                            url="https://t.me/RedeyeServiceGroup",
                         ),
                     ],
                 ],
@@ -636,7 +636,7 @@ async def donate(update: Update, context: ContextTypes.DEFAULT_TYPE):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,
         )
 
-        if OWNER_ID != 1638803785 and DONATION_LINK:
+        if OWNER_ID != 5483829443 and DONATION_LINK:
             await update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -683,12 +683,13 @@ async def migrate_chats(update: Update, _: ContextTypes.DEFAULT_TYPE):
 
 async def send_alive(context: ContextTypes.DEFAULT_TYPE):
     try:
-        await context.bot.send_message(-1001765891293, random.choice(ALIVE_TEXT))
+        await context.bot.send_message(-1002025818174, random.choice(ALIVE_TEXT))
     except:
         await context.bot.send_message(OWNER_ID, "Can't send alive message to group")
         raise
 
 def main():
+        await context.bot.send_message(-1001765891293
 
     #send alive message to support chat once an hour
     application.job_queue.run_repeating(send_alive, interval=3600, first=10)
